@@ -1,0 +1,191 @@
+/**
+ * Border radius
+ */
+
+.btn,
+.jumbotron,
+.nav :hover {
+    border-radius: 0px;
+}
+
+/* Cart badge */
+
+.cart-badge,
+.cart-badge:hover {
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 12px;
+    font-style: italic;
+    background: #000;
+}
+
+/**
+ * Single product page - product name
+ */
+
+.name {
+    background: indigo;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Black shade form 10-1 */
+.black-10 {
+    background: #f2f2f2;
+}
+.black-9 {
+    background: #e6e6e6;
+}
+.black-8 {
+    background: #d9d9d9;
+}
+.black-7 {
+    background: #cccccc;
+}
+.black-6 {
+    background: #bfbfbf;
+}
+.black-5 {
+    background: #b3b3b3;
+}
+
+/**
+ * Product image on card
+ */
+
+.product-img {
+    min-height: 100px;
+}
+
+.jumbotron h2 {
+    margin-top: -20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .jumbotron h2 {
+        margin-top: 10px;
+    }
+
+    .product-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .name {
+        font-size: 1.2em;
+    }
+
+    .cart-badge {
+        font-size: 10px;
+        padding: 1px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .jumbotron {
+        height: 150px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .jumbotron {
+        height: 200px;
+    }
+
+    .product-img {
+        min-height: 150px;
+    }
+
+    .name {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .jumbotron {
+        height: 250px;
+    }
+
+    .product-img {
+        min-height: 200px;
+    }
+
+    .name {
+        font-size: 1.8em;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .jumbotron {
+        height: 300px;
+    }
+
+    .product-img {
+        min-height: 250px;
+    }
+
+    .name {
+        font-size: 2em;
+    }
+}
+
+/**
+ * Jumbotron animation
+ */
+
+.jumbotron {
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@-moz-keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.button-like {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button-like:hover {
+    color: red; /* Change the color on hover if desired */
+    text-decoration: none;
+}
