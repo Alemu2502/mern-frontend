@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Layout from '../core/Layout'; // Assuming you have a Layout component
-
+import { API } from '../config';
 const ContactForm = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -20,7 +20,7 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/api/contact', {
+            await axios.post(`${API}/contact`, {
                 name,
                 email,
                 message
@@ -33,8 +33,8 @@ const ContactForm = () => {
 
     return (
         <Layout
-            title="Contact Us"
-            description="Feel free to reach out to us using the form below"
+            title="Contact Me"
+            description="Feel free to reach out to me using the form below"
             className="container col-12 col-md-8 offset-md-2"
         >
             <div className="row justify-content-center">
