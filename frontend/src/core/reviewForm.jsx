@@ -127,7 +127,6 @@ const ReviewForm = ({ productId, onReviewSubmit }) => {
       )}
       {delivered ? (
         <>
-          <h2 className="mb-4">Leave a Review</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="rating" className="form-label">Rating</label>
@@ -152,10 +151,12 @@ const ReviewForm = ({ productId, onReviewSubmit }) => {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary me-2">{reviewId ? 'Update Review' : 'Submit Review'}</button>
-            {reviewId && (
-              <button type="button" onClick={handleDelete} className="btn btn-danger">Delete Review</button>
-            )}
+            <div className="d-flex justify-content-between flex-wrap">
+              <button type="submit" className="btn btn-primary mb-2 me-2">{reviewId ? 'Update Review' : 'Submit Review'}</button>
+              {reviewId && (
+                <button type="button" onClick={handleDelete} className="btn btn-danger mb-2">Delete Review</button>
+              )}
+            </div>
           </form>
         </>
       ) : (

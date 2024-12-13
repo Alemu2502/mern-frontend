@@ -48,11 +48,8 @@ const Product = () => {
           {product && product.description && (
             <Card product={product} showViewProductButton={false} />
           )}
-          <div className="mt-4">
-            {/* <h4>Product Rating</h4> */}
-            {/* <StarRating count={5} value={product.averageRating || 0} size={24} edit={false} /> */}
-          </div>
-          <h4 className="mt-4">Add a Review</h4>
+
+          <h4 className="mt-4">Leave a Review</h4>
           {product._id && <ReviewForm productId={product._id} onReviewSubmit={() => loadSingleProduct(productId)} token={token} />} {/* Pass token here */}
           <h4 className="mt-4">Reviews</h4>
           {product._id && <Reviews productId={product._id} />}
