@@ -1,22 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { API } from '../config';
 
 const EmailVerification = () => {
     const { token } = useParams();
     const [message, setMessage] = useState('');
+    const [isError, setIsError] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
         const verifyEmail = async () => {
             try {
-                const response = await axios.post(`${process.env.REACT_APP_API_URL}/verify-email`, { token });
-                setMessage(response.data.message);
+                const response = await axios.post(`${API}/verify-email`, { token });
+                setMessage('Your email has been verified successfully! Redirecting to sign in...');
+                setIsError(false);
                 setTimeout(() => {
                     navigate('/signin');
                 }, 3000); // Redirect after 3 seconds
             } catch (error) {
-                setMessage(error.response.data.error);
+                setMessage('Failed to verify email. Please try again.');
+                setIsError(true);
             }
         };
         verifyEmail();
@@ -25,7 +29,9 @@ const EmailVerification = () => {
     return (
         <div className="container mt-5">
             <h2>Email Verification</h2>
-            <p>{message}</p>
+            <div className={`alert ${isError ? 'alert-danger' : 'alert-success'}`} role="alert">
+                {message}
+            </div>
         </div>
     );
 };

@@ -3,7 +3,6 @@ import { addReview, getUserReview, updateReview, deleteReview, hasDelivered } fr
 import StarRating from './StarRating';
 import { isAuthenticated } from '../auth';
 import { Link } from 'react-router-dom';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ReviewForm = ({ productId, onReviewSubmit }) => {
   const [rating, setRating] = useState(0);
@@ -19,7 +18,6 @@ const ReviewForm = ({ productId, onReviewSubmit }) => {
     const checkReviewExists = async () => {
       if (user && token && !hasCheckedReview) {
         try {
-          // Removed the console logs for error handling
           const deliveryResponse = await hasDelivered(productId, user._id, token);
           
           if (deliveryResponse.delivered) {
