@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth";
 import { itemTotal } from "./cartHelpers";
@@ -16,86 +16,84 @@ const Menu = () => {
     const location = useLocation();
 
     return (
-        <div>
-            <ul className="nav nav-tabs bg-primary">
-                <li className="nav-item">
-                    <Link className="nav-link" style={isActive(location, "/")} to="/">
-                        Home
-                    </Link>
-                </li>
-
-                {isAuthenticated() && isAuthenticated().user.role === 1 && (
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+            <Link className="navbar-brand" to="/">Brand</Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Link className="nav-link" style={isActive(location, "/shop")} to="/shop">
-                            Shop
+                        <Link className="nav-link" style={isActive(location, "/")} to="/">
+                            Home
                         </Link>
                     </li>
-                )}
-
-                <li className="nav-item">
-                    <Link className="nav-link" style={isActive(location, "/cart")} to="/cart">
-                        Cart{" "}
-                        <sup>
-                            <small className="cart-badge">{itemTotal()}</small>
-                        </sup>
-                    </Link>
-                </li>
-
-                {isAuthenticated() && isAuthenticated().user.role === 0 && (
                     <li className="nav-item">
-                        <Link className="nav-link" style={isActive(location, "/user/dashboard")} to="/user/dashboard">
-                            Dashboard
+                        <Link className="nav-link" style={isActive(location, "/cart")} to="/cart">
+                            Cart{" "}
+                            <sup>
+                                <small className="cart-badge">{itemTotal()}</small>
+                            </sup>
                         </Link>
                     </li>
-                )}
-
-                {isAuthenticated() && isAuthenticated().user.role === 1 && (
-                    <li className="nav-item">
-                        <Link className="nav-link" style={isActive(location, "/admin/dashboard")} to="/admin/dashboard">
-                            Dashboard
-                        </Link>
-                    </li>
-                )}
-
-                {!isAuthenticated() && (
-                    <Fragment>
+                    {isAuthenticated() && isAuthenticated().user.role === 0 && (
                         <li className="nav-item">
-                            <Link className="nav-link" style={isActive(location, "/signin")} to="/signin">
-                                Signin
+                            <Link className="nav-link" style={isActive(location, "/user/dashboard")} to="/user/dashboard">
+                                Dashboard
                             </Link>
                         </li>
-
-                        <li className="nav-item">
-                            <Link className="nav-link" style={isActive(location, "/signup")} to="/signup">
-                                Signup
-                            </Link>
-                        </li>
-                    </Fragment>
-                )}
-
-                <li className="nav-item">
-                    <Link className="nav-link" style={isActive(location, "/contact")} to="/contact">
-                        Contact
-                    </Link>
-                </li>
-
-                {isAuthenticated() && (
+                    )}
+                    {isAuthenticated() && isAuthenticated().user.role === 1 && (
+                        <>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(location, "/admin/dashboard")} to="/admin/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(location, "/shop")} to="/shop">
+                                    Shop
+                                </Link>
+                            </li>
+                        </>
+                    )}
+                    {!isAuthenticated() && (
+                        <>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(location, "/signin")} to="/signin">
+                                    Signin
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" style={isActive(location, "/signup")} to="/signup">
+                                    Signup
+                                </Link>
+                            </li>
+                        </>
+                    )}
                     <li className="nav-item">
-                        <span
-                            className="nav-link"
-                            style={{ cursor: "pointer", color: "#ffffff" }}
-                            onClick={() =>
-                                signout(() => {
-                                    navigate("/");
-                                })
-                            }
-                        >
-                            Signout
-                        </span>
+                        <Link className="nav-link" style={isActive(location, "/contact")} to="/contact">
+                            Contact
+                        </Link>
                     </li>
-                )}
-            </ul>
-        </div>
+                    {isAuthenticated() && (
+                        <li className="nav-item">
+                            <span
+                                className="nav-link"
+                                style={{ cursor: "pointer", color: "#ffffff" }}
+                                onClick={() =>
+                                    signout(() => {
+                                        navigate("/");
+                                    })
+                                }
+                            >
+                                Signout
+                            </span>
+                        </li>
+                    )}
+                </ul>
+            </div>
+        </nav>
     );
 };
 
