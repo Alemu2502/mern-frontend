@@ -57,7 +57,7 @@ const ResetPassword = () => {
             return;
         }
         try {
-            const response = await axios.post(`${API}/reset-password`, { resetPasswordToken: token, newPassword });
+            const response = await axios.post(`${API}/reset-password`, { token, newPassword });
             setValues({ ...values, message: response.data.message });
             setTimeout(() => {
                 navigate('/signin');
