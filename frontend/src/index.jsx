@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './Routes';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS here
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 // Create a root container
 const container = document.getElementById('root');

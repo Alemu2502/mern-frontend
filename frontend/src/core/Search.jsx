@@ -80,32 +80,37 @@ const Search = () => {
     };
 
     const searchForm = () => (
-        <form onSubmit={searchSubmit} className="bg-white p-3 sticky-top">
-            <div className="input-group input-group-lg">
-                <div className="input-group-prepend">
-                    <select className="btn btn-outline-secondary" onChange={handleChange("category")}>
-                        <option value="All">All</option>
-                        {categories.map((c) => (
-                            <option key={c._id} value={c._id}>
-                                {c.name}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+        <form onSubmit={searchSubmit}>
+            <span className="input-group-text">
+                <div className="input-group input-group-lg">
+                    <div className="input-group-prepend">
+                        <select
+                            className="btn mr-2"
+                            onChange={handleChange("category")}
+                        >
+                            <option value="All">All</option>
+                            {categories.map((c) => (
+                                <option key={c._id} value={c._id}>
+                                    {c.name}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                <input
-                    type="search"
-                    className="form-control"
-                    onChange={handleChange("search")}
-                    placeholder="Search by name, author, or category"
-                />
-
-                <div className="input-group-append">
-                    <button className="btn btn-outline-secondary" type="submit">
-                        Search
-                    </button>
+                    <input
+                        type="search"
+                        className="form-control"
+                        onChange={handleChange("search")}
+                        placeholder="Search by name, author, or category"
+                    />
                 </div>
-            </div>
+                <div
+                    className="btn input-group-append"
+                    style={{ border: "none" }}
+                >
+                    <button className="input-group-text">Search</button>
+                </div>
+            </span>
         </form>
     );
 

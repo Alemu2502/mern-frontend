@@ -31,7 +31,7 @@ const StarRating = ({ count = 5, value = 0, size = 24, edit = false, onChange = 
             height: `${size}px`,
           }}
         >
-          {/* Full Star (Clickable area for left half of the star) */}
+          {/* Clickable area for the left half of the star */}
           <div
             style={{
               position: 'absolute',
@@ -40,12 +40,12 @@ const StarRating = ({ count = 5, value = 0, size = 24, edit = false, onChange = 
               left: 0,
               top: 0,
               cursor: edit ? 'pointer' : 'default',
-              zIndex: 3 // Ensure the clickable area is above the star
+              zIndex: 3, // Ensure the clickable area is above the star
             }}
             onClick={() => handleClick(index, true)}
           ></div>
 
-          {/* Right Half (Clickable area for the right half of the star) */}
+          {/* Clickable area for the right half of the star */}
           <div
             style={{
               position: 'absolute',
@@ -54,7 +54,7 @@ const StarRating = ({ count = 5, value = 0, size = 24, edit = false, onChange = 
               right: 0,
               top: 0,
               cursor: edit ? 'pointer' : 'default',
-              zIndex: 3 // Ensure the clickable area is above the star
+              zIndex: 3, // Ensure the clickable area is above the star
             }}
             onClick={() => handleClick(index, false)}
           ></div>
