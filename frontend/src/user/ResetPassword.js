@@ -68,7 +68,7 @@ const ResetPassword = () => {
     };
 
     const resetPasswordForm = () => (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <label className="text-muted">New Password</label>
                 <div className="input-group">
