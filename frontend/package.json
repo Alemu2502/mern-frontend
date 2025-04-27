@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts --openssl-legacy-provider build && cp public/ads.txt dist/",
+    "build": "react-scripts --openssl-legacy-provider build && xcopy public\\ads.txt dist\\ /Y",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
