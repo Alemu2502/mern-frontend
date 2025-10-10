@@ -189,7 +189,7 @@ const Signup = () => {
         <div className="alert alert-success" style={{ display: success ? '' : 'none' }}>
             <h4>Account Created Successfully!</h4>
             <p>
-                Please check your inbox to verify your email address. You can now 
+                Please check your inbox or spam folder to verify your email address. You can now 
                 <Link to="/signin" className="alert-link"> sign in</Link> once verified.
             </p>
         </div>
