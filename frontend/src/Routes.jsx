@@ -22,6 +22,8 @@ import EmailVerification from './user/EmailVerification';
 import ForgotPassword from './user/ForgotPassword';
 import ResetPassword from './user/ResetPassword';
 import ContactForm from './user/contactForm'; // Import ContactForm
+import AdminUserPanel from './admin/AdminUserPanel';
+
 
 const AppRoutes = () => {
     return (
@@ -46,6 +48,7 @@ const AppRoutes = () => {
             <Route path="/verify-email/:token" element={<EmailVerification />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
+            <Route path="/admin/users" element={<AdminUserPanel />} />
         </Routes>
     );
 };
