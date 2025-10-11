@@ -22,7 +22,7 @@ import EmailVerification from './user/EmailVerification';
 import ForgotPassword from './user/ForgotPassword';
 import ResetPassword from './user/ResetPassword';
 import ContactForm from './user/contactForm'; // Import ContactForm
-import AdminUserPanel from './admin/AdminUserPanel';
+import AdminUserPanel from './user/AdminUserPanel';
 
 
 const AppRoutes = () => {
