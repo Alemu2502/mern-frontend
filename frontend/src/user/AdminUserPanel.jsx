@@ -7,45 +7,53 @@ const AdminUserPanel = () => {
   const [users, setUsers] = useState([]);
   const { user, token } = isAuthenticated();
 
-  const fetchUsers = async () => {
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const { data } = await axios.get('/api/admin/users', {
+          headers: {
+            Authorization: token
+          }
+        });
+        if (data && Array.isArray(data.users)) {
+          setUsers(data.users);
+        } else {
+          setUsers([]);
+        }
+      } catch (err) {
+        console.error('Error fetching users:', err);
+        setUsers([]);
+      }
+    };
+
+    loadUsers();
+  }, [token]);
+
+  const deleteUser = async (id) => {
     try {
-      const { data } = await axios.get('/api/admin/users', {
+      await axios.delete(`/api/admin/users/${id}`, {
         headers: {
           Authorization: token
         }
       });
-      if (data && Array.isArray(data.users)) {
-        setUsers(data.users);
-      } else {
-        setUsers([]);
-      }
+      setUsers(users.filter(u => u._id !== id));
     } catch (err) {
-      console.error('Error fetching users:', err);
-      setUsers([]);
+      console.error('Error deleting user:', err);
     }
   };
 
-  const deleteUser = async (id) => {
-    await axios.delete(`/api/admin/users/${id}`, {
-      headers: {
-        Authorization: token
-      }
-    });
-    fetchUsers();
-  };
-
   const updateRole = async (id, role) => {
-    await axios.put(`/api/admin/users/${id}/role`, { role }, {
-      headers: {
-        Authorization: token
-      }
-    });
-    fetchUsers();
+    try {
+      await axios.put(`/api/admin/users/${id}/role`, { role }, {
+        headers: {
+          Authorization: token
+        }
+      });
+      setUsers(users.map(u => u._id === id ? { ...u, role } : u));
+    } catch (err) {
+      console.error('Error updating role:', err);
+    }
   };
-
-  useEffect(() => {
-    fetchUsers();
-  },[]);
 
   return (
     <Layout
@@ -71,7 +79,7 @@ const AdminUserPanel = () => {
                 <td>{u.isVerified ? '✅' : '❌'}</td>
                 <td>{u.role === 1 ? 'Admin' : 'User'}</td>
                 <td>
-                  <button onClick={() => deleteUser(u._id)} className="btn btn-danger btn-sm">Delete</button>
+                  <button onClick={() => deleteUser(u._id)} className="btn btn-danger btn-sm me-2">Delete</button>
                   <button onClick={() => updateRole(u._id, u.role === 1 ? 0 : 1)} className="btn btn-primary btn-sm">
                     {u.role === 1 ? 'Demote' : 'Promote'}
                   </button>
