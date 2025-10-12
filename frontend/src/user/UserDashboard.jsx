@@ -75,7 +75,7 @@ const Dashboard = () => {
                                     <div key={i}>
                                         <h6>Product name: {p.name}</h6>
                                         <h6>Product price: ${p.price}</h6>
-                                        <h6>Purchased date: {moment(p.createdAt).fromNow()}</h6>
+                                        <h6>Purchased date: {moment(h.createdAt).format('MMMM Do YYYY, h:mm:ss A')}</h6>
                                     </div>
                                 ))}
                             </div>

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './Routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './index.css';
 
 // Create a root container
 const container = document.getElementById('root');

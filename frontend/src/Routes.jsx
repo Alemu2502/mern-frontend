@@ -48,7 +48,7 @@ const AppRoutes = () => {
             <Route path="/verify-email/:token" element={<EmailVerification />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password/:token" element={<ResetPassword />} />
-            <Route path="/admin/users" element={<AdminUserPanel />} />
+            <Route path="/admin/users" element={<AdminRoute component={AdminUserPanel} />} />
         </Routes>
     );
 };
