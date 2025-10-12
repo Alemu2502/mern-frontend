@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../core/Layout';
-import { isAuthenticated } from '../auth'; // Ensure you import the authentication utility
+//import { isAuthenticated } from '../auth'; // Ensure you import the authentication utility
 import { Link } from 'react-router-dom';
 import { getProduct, getReviews } from './apiCore';
 
@@ -9,7 +9,7 @@ const ViewProduct = ({ match }) => {
     const [reviews, setReviews] = useState([]);
     const [error, setError] = useState(false);
 
-    const { user, token } = isAuthenticated(); // Get user and token from authentication
+    //const { user, token } = isAuthenticated(); // Get user and token from authentication
 
     const loadSingleProduct = productId => {
         getProduct(productId).then(data => {

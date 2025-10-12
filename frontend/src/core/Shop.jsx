@@ -86,7 +86,7 @@ const AddProduct = () => {
 
     const newPostForm = () => (
         <form className="mb-3" onSubmit={clickSubmit}>
-            <h4>Post Photo</h4>
+            <h4 className='text-primary'>Post Photo</h4>
             <div className="form-group">
                 <label className="btn btn-secondary">
                     <input onChange={handleChange('photo')} type="file" name="photo" accept="image/*" />
@@ -94,7 +94,7 @@ const AddProduct = () => {
             </div>
 
             <div className="form-group">
-                <label className="text-muted">Name</label>
+                <label className="text-muted ">Name</label>
                 <input onChange={handleChange('name')} type="text" className="form-control" value={name} />
             </div>
 

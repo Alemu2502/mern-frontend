@@ -13,7 +13,7 @@ const RadioBox = ({ prices, handleFilters }) => {
             <input
                 onChange={handleChange}
                 value={`${p._id}`}
-                name={value} // Updated this line to avoid the warning
+                name={value} 
                 type="radio"
                 className="mr-2 ml-4"
             />

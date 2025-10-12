@@ -31,7 +31,7 @@ const StarRating = ({ count = 5, value = 0, size = 24, edit = false, onChange = 
             height: `${size}px`,
           }}
         >
-          {/* Clickable area for the left half of the star */}
+       
           <div
             style={{
               position: 'absolute',

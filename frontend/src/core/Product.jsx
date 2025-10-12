@@ -4,9 +4,8 @@ import Layout from './Layout';
 import { read, listRelated } from './apiCore';
 import Card from './Card';
 import Reviews from './reviews';
-import ReviewForm from './reviewForm'; // Ensure correct casing
-//import StarRating from './StarRating';
-import { isAuthenticated } from '../auth'; // Ensure the authentication module is imported
+import ReviewForm from './reviewForm'; 
+import { isAuthenticated } from '../auth'; 
 
 const Product = () => {
   const [product, setProduct] = useState({});
@@ -49,14 +48,14 @@ const Product = () => {
             <Card product={product} showViewProductButton={false} />
           )}
 
-          <h4 className="mt-4">Leave a Review</h4>
+          <h4 className="mt-4 text-success">Leave a Review</h4>
           {product._id && <ReviewForm productId={product._id} onReviewSubmit={() => loadSingleProduct(productId)} token={token} />} {/* Pass token here */}
-          <h4 className="mt-4">Reviews</h4>
+          <h4 className="mt-4 text-primary">Reviews</h4>
           {product._id && <Reviews productId={product._id} />}
         </div>
 
         <div className="col-4">
-          <h4>Related products</h4>
+          <h4 className="text-info">Related products</h4>
           {relatedProduct.map((p) => (
             <div className="mb-3" key={p._id}>
               <Card product={p} />

@@ -5,6 +5,7 @@ const handleResponse = async (response) => {
     let errorMessage = 'Unknown error';
     try {
       errorMessage = await response.text();
+      console.log('Error message from server:', errorMessage);
     } catch (err) {
       // Error parsing response text
     }
