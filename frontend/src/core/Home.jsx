@@ -45,6 +45,7 @@ const Home = () => {
                 ))}
             </div>
 
+
             <h2 className="mb-4 text-danger">Best Sellers</h2>
             <div className="row">
                 {productsBySell.map((product, i) => (

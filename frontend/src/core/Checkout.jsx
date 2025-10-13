@@ -105,6 +105,7 @@ if (requiresShipping && !data.address.trim()) {
         }
     };
 
+    
     const showDropIn = () => (
         <div onBlur={() => setData({ ...data, error: '' })}>
             {data.clientToken !== null && products.length > 0 ? (

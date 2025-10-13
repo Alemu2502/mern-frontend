@@ -229,3 +229,4 @@ export const getProduct = async (productId) => {
     return await handleResponse(response);
   } catch (err) {}
 };
+

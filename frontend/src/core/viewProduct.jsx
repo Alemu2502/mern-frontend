@@ -32,6 +32,7 @@ const ViewProduct = ({ match }) => {
         });
     };
 
+    
     useEffect(() => {
         const productId = match.params.productId;
         loadSingleProduct(productId);

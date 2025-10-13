@@ -13,6 +13,7 @@ const Signup = () => {
         showPassword: false
     });
 
+    
     const { name, email, password, success, error, showPassword } = values;
     const [passwordStrength, setPasswordStrength] = useState({
         hasUpperCase: false,

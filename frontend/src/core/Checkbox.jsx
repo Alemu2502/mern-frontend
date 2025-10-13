@@ -19,6 +19,7 @@ const Checkbox = ({ categories, handleFilters }) => {
         handleFilters(newCheckedCategoryId);
     };
 
+    
     return categories.map((c, i) => (
         <li key={i} className="list-unstyled">
             <input

@@ -109,4 +109,5 @@ StarRating.propTypes = {
   onChange: PropTypes.func,
 };
 
+
 export default StarRating;

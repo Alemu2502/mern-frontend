@@ -47,6 +47,7 @@ export const updateUser = (user, next) => {
     }
 };
 
+
 // Function to get user's purchase history
 export const getPurchaseHistory = async (userId, token) => {
     try {

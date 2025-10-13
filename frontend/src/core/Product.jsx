@@ -31,6 +31,7 @@ const Product = () => {
     });
   };
 
+ 
   useEffect(() => {
     loadSingleProduct(productId);
   }, [productId]);

@@ -112,6 +112,7 @@ const Card = ({
     );
   };
 
+  
   return (
     <div className="card">
       <div className="card-header card-header-1">{product.name}</div>

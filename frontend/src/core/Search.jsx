@@ -23,6 +23,7 @@ const Search = () => {
         });
     };
 
+    
     useEffect(() => {
         loadCategories();
     }, []);

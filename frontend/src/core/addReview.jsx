@@ -12,6 +12,7 @@ const handleResponse = async (response) => {
     throw new Error('Network response was not ok');
   }
 
+  
   try {
     return await response.json();
   } catch (err) {
