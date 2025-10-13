@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import DropIn from 'braintree-web-drop-in-react';
 
 const Checkout = ({ products, setRun = f => f, run = undefined }) => {
+    
     const [data, setData] = useState({
         loading: false,
         success: false,
@@ -61,6 +62,14 @@ const Checkout = ({ products, setRun = f => f, run = undefined }) => {
 
     const buy = async () => {
         setData({ loading: true });
+
+        const requiresShipping = products.some(product => product.shipping === "1");
+
+if (requiresShipping && !data.address.trim()) {
+  setData({ loading: false, error: "Shipping address is required for physical products." });
+  return;
+}
+
         let nonce;
         try {
             const paymentData = await instanceRef.current.requestPaymentMethod();

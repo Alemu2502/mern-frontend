@@ -40,7 +40,7 @@ const AdminDashboard = () => {
         </div>
         <div className="col-9">
           <div className="card mb-5">
-            <h3 className="card-header">User Information</h3>
+            <h3 class="red">User Information</h3>
             <ul className="list-group">
               <li className="list-group-item">{user?.name}</li>
               <li className="list-group-item">{user?.email}</li>
