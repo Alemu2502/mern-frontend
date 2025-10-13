@@ -13,7 +13,7 @@ const initialState = {
     shipping: '',
     quantity: '',
     photo: '',
-    author: '', // Added author field
+    author: '', 
     loading: false,
     error: '',
     createdProduct: '',

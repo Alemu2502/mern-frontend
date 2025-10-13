@@ -74,7 +74,7 @@ export const getCategories = async () => {
     }
 };
 
-// Delete a category
+
 
 // Delete a category
 export const deleteCategory = async (categoryId, userId, token) => {
