@@ -78,6 +78,7 @@ const UpdateCategory = () => {
         success && <div className="alert alert-success">Category updated successfully</div>
     );
 
+    
     return (
         <Layout
             title={`Hi ${user.name}`}

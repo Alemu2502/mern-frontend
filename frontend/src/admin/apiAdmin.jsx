@@ -199,6 +199,7 @@ export const updateProduct = async (productId, userId, token, product) => {
             },
             body: product
         });
+        
         return await response.json();
     } catch (error) {
         

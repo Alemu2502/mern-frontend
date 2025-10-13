@@ -119,6 +119,7 @@ const AddProduct = () => {
                 </select>
             </div>
 
+
             <div className="form-group">
                 <label className="text-muted">Shipping</label>
                 <select onChange={handleChange('shipping')} className="form-control" value={state.shipping} aria-label="Product Shipping" required>

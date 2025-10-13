@@ -45,6 +45,7 @@ const AddCategory = () => {
                     required
                 />
             </div>
+            
             <button className="btn btn-outline-primary">Create Category</button>
         </form>
     );
