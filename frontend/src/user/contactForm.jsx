@@ -34,7 +34,7 @@ const ContactForm = () => {
     return (
         <Layout
             title="Contact Me"
-            description="Feel free to reach out to me using the form below"
+            description="Feel free to reach out to us using the form below"
             className="container col-12 col-md-8 offset-md-2"
         >
             <div className="row justify-content-center">
