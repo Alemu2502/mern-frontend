@@ -93,7 +93,3 @@ Make sure to set your VITE_API_URL in the deployment environment settings.
 ```
 ##📄 License
 This project is licensed under the MIT License.
-
-
-Let me know if you want a matching `.env.example` file or a deployment checklist next!
-```
