@@ -36,7 +36,7 @@ This is the frontend for a full-stack e-commerce application built with React. I
 - **React Router**
 - **Axios**
 - **Tailwind CSS / Bootstrap / Custom CSS**
-- **Context API / Redux (if used)**
+- **Context API / Redux**
 - **Vite / Webpack / Create React App**
 
 ---
